@@ -5,32 +5,32 @@
 class Opendeps < Formula
   desc "OpenDeps allows you to express your application's external runtime dependencies. Using OpenDeps, you use a YAML file to clearly communicate what APIs your software component needs to run correctly."
   homepage "https://github.com/opendeps/specification"
-  version "0.1.6"
+  version "0.1.7"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/opendeps/cli/releases/download/v0.1.6/opendeps_0.1.6_macOS_x86_64.tar.gz"
-      sha256 "732bc8fbdabe084f094eacd467d59ff254a693832c6a99515bd81ec136b87c26"
+      url "https://github.com/opendeps/cli/releases/download/v0.1.7/opendeps_0.1.7_macOS_x86_64.tar.gz"
+      sha256 "b87517a63eff657a7c236704581360084ed793cad3265b45ed4bd8f8f0f76b0e"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/opendeps/cli/releases/download/v0.1.6/opendeps_0.1.6_macOS_arm64.tar.gz"
-      sha256 "65ad9bc5ef390056d188751341e8603e35a4648de6da3ee5bb09cf88a5e1f953"
+      url "https://github.com/opendeps/cli/releases/download/v0.1.7/opendeps_0.1.7_macOS_arm64.tar.gz"
+      sha256 "ea83f0c022940616f4d1eb6372ca89e8f769848149e3e065ff7d3275120f0e6f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/opendeps/cli/releases/download/v0.1.6/opendeps_0.1.6_Linux_x86_64.tar.gz"
-      sha256 "39b2e56ec0fdc2d3bb8fc248b83845b368ec37bafef554144c97b89a835ea345"
+      url "https://github.com/opendeps/cli/releases/download/v0.1.7/opendeps_0.1.7_Linux_x86_64.tar.gz"
+      sha256 "cb8b1d9311953e1d973f5ae18ce1c90d10a2cb4d15b5c0365018fef5b3d86592"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/opendeps/cli/releases/download/v0.1.6/opendeps_0.1.6_Linux_armv6.tar.gz"
-      sha256 "c020b1be0b2edb557ad0b22c2b70638a88417f2ec13e06fe2e8f12f3ff1010db"
+      url "https://github.com/opendeps/cli/releases/download/v0.1.7/opendeps_0.1.7_Linux_armv6.tar.gz"
+      sha256 "869051c6b9a7b7febc64c900e1b81f5900a8b551df6a500e2bf82c9e958e1abd"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/opendeps/cli/releases/download/v0.1.6/opendeps_0.1.6_Linux_arm64.tar.gz"
-      sha256 "d06bb1181a6fee3777e56d744626ce1b1a2484b4c7cc0c22650c3866bb3dd7bd"
+      url "https://github.com/opendeps/cli/releases/download/v0.1.7/opendeps_0.1.7_Linux_arm64.tar.gz"
+      sha256 "654056a065958ebdae5a7ded6538be9b75bc8cf3b4dd2d7ade732bbf62393703"
     end
   end
 

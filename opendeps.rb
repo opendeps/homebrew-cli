@@ -5,37 +5,52 @@
 class Opendeps < Formula
   desc "OpenDeps allows you to express your application's external runtime dependencies. Using OpenDeps, you use a YAML file to clearly communicate what APIs your software component needs to run correctly."
   homepage "https://github.com/opendeps/specification"
-  version "0.2.5"
-  bottle :unneeded
+  version "0.2.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/opendeps/cli/releases/download/v0.2.5/opendeps_0.2.5_macOS_x86_64.tar.gz"
-      sha256 "b8163fbc5811307ad9a8e7ac8b37f7eeab984cd5a96c3ac5778e94e2893bc655"
+      url "https://github.com/opendeps/cli/releases/download/v0.2.6/opendeps_0.2.6_macOS_x86_64.tar.gz"
+      sha256 "c6c57edda2d430fd2a4d733fb5a2e666229524cf7a366deb4e4e5366e21e0537"
+
+      def install
+        bin.install "opendeps"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/opendeps/cli/releases/download/v0.2.5/opendeps_0.2.5_macOS_arm64.tar.gz"
-      sha256 "5cdf3cab8a1d5681927453f9f7524b218abe3888660a61a2845d250e115e7a74"
+      url "https://github.com/opendeps/cli/releases/download/v0.2.6/opendeps_0.2.6_macOS_arm64.tar.gz"
+      sha256 "cf76157e65ad9a146811d4f69b418297b768e15f8faf53b88f81935d7deca55d"
+
+      def install
+        bin.install "opendeps"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/opendeps/cli/releases/download/v0.2.5/opendeps_0.2.5_Linux_x86_64.tar.gz"
-      sha256 "66f292353c81926f1e3c29c8e935344e214ac4ddc49775ba220cea7d95c1ec5c"
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/opendeps/cli/releases/download/v0.2.5/opendeps_0.2.5_Linux_armv6.tar.gz"
-      sha256 "0597260eff622a098fde18323b4f3e9f3e76c246919901d35fab09117854e82e"
+      url "https://github.com/opendeps/cli/releases/download/v0.2.6/opendeps_0.2.6_Linux_armv6.tar.gz"
+      sha256 "6e68f5df74629ac1b2293ada515e57c80e67c4d0e75f1aebdcede4244b59d191"
+
+      def install
+        bin.install "opendeps"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/opendeps/cli/releases/download/v0.2.6/opendeps_0.2.6_Linux_x86_64.tar.gz"
+      sha256 "a87e6dc7f43bc454dd87f907b17401679999cd9fc2a0af2a7a8b447b0c2f0818"
+
+      def install
+        bin.install "opendeps"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/opendeps/cli/releases/download/v0.2.5/opendeps_0.2.5_Linux_arm64.tar.gz"
-      sha256 "52e8bcff5a15cfc34f82e9a171d54bb407338d66be0f46a6c50d4e931591a73c"
-    end
-  end
+      url "https://github.com/opendeps/cli/releases/download/v0.2.6/opendeps_0.2.6_Linux_arm64.tar.gz"
+      sha256 "5cc8591ef2403041d968bfebe2f17ff9ceba08806aeec8b4427f029bb54a6bcf"
 
-  def install
-    bin.install "opendeps"
+      def install
+        bin.install "opendeps"
+      end
+    end
   end
 
   def caveats; <<~EOS
